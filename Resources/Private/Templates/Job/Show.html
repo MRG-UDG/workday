@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="mb-4">{job.title}</h1>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Job Details</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Location:</strong> {job.location}</li>
+                            <li class="list-group-item"><strong>Salary:</strong> {job.salary}</li>
+                            <li class="list-group-item"><strong>Job Type:</strong> {job.jobType}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Job Description</h5>
+                        <div class="job-description">
+                            <f:format.html>{job.description}</f:format.html>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <a href="{job.applicationLink}" class="btn btn-primary btn-lg" target="_blank">Apply Now</a>
+                </div>
+
+                <div class="mt-4">
+                    <f:link.action action="list" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to list
+                    </f:link.action>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+</html>

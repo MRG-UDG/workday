@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  MRG\Workday\:
+    resource: '../Classes/*'
+
+  MRG\Workday\Controller\JobController:
+    tags: ['controller.service_controller']
+
+  MRG\Workday\Task\ImportJobsTask:
+    tags: ['scheduler.task']

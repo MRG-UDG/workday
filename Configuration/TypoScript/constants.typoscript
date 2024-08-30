@@ -1,0 +1,14 @@
+plugin.tx_mrgworkday_joblisting {
+    view {
+        # cat=plugin.tx_mrgworkday_joblisting/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:mrg_workday/Resources/Private/Templates/
+        # cat=plugin.tx_mrgworkday_joblisting/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:mrg_workday/Resources/Private/Partials/
+        # cat=plugin.tx_mrgworkday_joblisting/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:mrg_workday/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_mrgworkday_joblisting//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

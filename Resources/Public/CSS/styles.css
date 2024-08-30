@@ -1,0 +1,43 @@
+.job-listing {
+    margin-bottom: 20px;
+}
+
+.job-listing ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-listing li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.job-details {
+    margin-bottom: 20px;
+}
+
+.job-description {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+}

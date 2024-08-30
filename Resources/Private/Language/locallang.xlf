@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2023-08-30T12:00:00Z" product-name="mrg_workday">
+        <header/>
+        <body>
+            <trans-unit id="tx_mrgworkday_domain_model_job">
+                <source>Job</source>
+            </trans-unit>
+            <trans-unit id="tx_mrgworkday_domain_model_job.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_mrgworkday_domain_model_job.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_mrgworkday_domain_model_job.location">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="tx_mrgworkday_domain_model_job.salary">
+                <source>Salary</source>
+            </trans-unit>
+            <trans-unit id="tx_mrgworkday_domain_model_job.job_type">
+                <source>Job Type</source>
+            </trans-unit>
+            <trans-unit id="tx_mrgworkday_domain_model_job.workday_id">
+                <source>Workday ID</source>
+            </trans-unit>
+            <trans-unit id="tx_mrgworkday_domain_model_job.application_link">
+                <source>Application Link</source>
+            </trans-unit>
+            <trans-unit id="importJobsTask.name">
+                <source>Import Jobs from Workday</source>
+            </trans-unit>
+            <trans-unit id="importJobsTask.description">
+                <source>Imports job listings from the Workday API and updates the local database.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

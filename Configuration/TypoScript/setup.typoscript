@@ -1,0 +1,22 @@
+plugin.tx_mrgworkday_joblisting {
+    view {
+        templateRootPaths.0 = EXT:mrg_workday/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_mrgworkday_joblisting.view.templateRootPath}
+        partialRootPaths.0 = EXT:mrg_workday/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_mrgworkday_joblisting.view.partialRootPath}
+        layoutRootPaths.0 = EXT:mrg_workday/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_mrgworkday_joblisting.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_mrgworkday_joblisting.persistence.storagePid}
+    }
+}
+
+page {
+    includeCSS {
+        mrgworkday = EXT:mrg_workday/Resources/Public/CSS/styles.css
+    }
+    includeJSFooter {
+        mrgworkday = EXT:mrg_workday/Resources/Public/JavaScript/main.js
+    }
+}
