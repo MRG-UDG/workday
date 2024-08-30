@@ -3,35 +3,41 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2023-08-30T12:00:00Z" product-name="workday">
         <header/>
         <body>
-            <trans-unit id="tx_workday_domain_model_job">
-                <source>Job</source>
+            <trans-unit id="content_element.joblist.title">
+                <source>Workday Job List</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.title">
-                <source>Title</source>
+            <trans-unit id="content_element.joblist.description">
+                <source>Displays a list of jobs from Workday API</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.description">
-                <source>Description</source>
+            <trans-unit id="job.title">
+                <source>Job Title</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.location">
+            <trans-unit id="job.description">
+                <source>Job Description</source>
+            </trans-unit>
+            <trans-unit id="job.location">
                 <source>Location</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.salary">
-                <source>Salary</source>
+            <trans-unit id="job.department">
+                <source>Department</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.job_type">
-                <source>Job Type</source>
+            <trans-unit id="job.salary">
+                <source>Salary Range</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.workday_id">
-                <source>Workday ID</source>
+            <trans-unit id="job.apply">
+                <source>Apply Now</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.application_link">
-                <source>Application Link</source>
+            <trans-unit id="list.no_jobs">
+                <source>No jobs available at the moment.</source>
             </trans-unit>
-            <trans-unit id="importJobsTask.name">
-                <source>Import Jobs from Workday</source>
+            <trans-unit id="list.error">
+                <source>Error fetching job listings. Please try again later.</source>
             </trans-unit>
-            <trans-unit id="importJobsTask.description">
-                <source>Imports job listings from the Workday API and updates the local database.</source>
+            <trans-unit id="show.not_found">
+                <source>Job not found.</source>
+            </trans-unit>
+            <trans-unit id="show.error">
+                <source>Error fetching job details. Please try again later.</source>
             </trans-unit>
         </body>
     </file>

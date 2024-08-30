@@ -6,56 +6,39 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'versioningWS' => true,
-        'languageField' => 'sys_language_uid',
-        'transOrigPointerField' => 'l10n_parent',
-        'transOrigDiffSourceField' => 'l10n_diffsource',
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'searchFields' => 'title,description,location,salary,job_type',
+        'searchFields' => 'workday_id,title,description,location,department',
         'iconfile' => 'EXT:workday/Resources/Public/Icons/tx_workday_domain_model_job.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'title, description, location, salary, job_type, workday_id, application_link, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, sys_language_uid, l10n_parent, l10n_diffsource'],
+        '1' => ['showitem' => 'workday_id, title, description, location, department, salary_range, application_deadline, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden'],
     ],
     'columns' => [
-        'sys_language_uid' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => [
-                'type' => 'language',
-            ],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    ['', 0],
-                ],
-                'foreign_table' => 'tx_workday_domain_model_job',
-                'foreign_table_where' => 'AND tx_workday_domain_model_job.pid=###CURRENT_PID### AND tx_workday_domain_model_job.sys_language_uid IN (-1,0)',
-            ],
-        ],
-        'l10n_diffsource' => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
             'config' => [
                 'type' => 'check',
+                'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => '',
+                        'invertStateDisplay' => true
                     ]
                 ],
+            ]
+        ],
+        'workday_id' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.workday_id',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,unique'
             ],
         ],
         'title' => [
@@ -72,11 +55,9 @@ return [
             'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.description',
             'config' => [
                 'type' => 'text',
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
                 'cols' => 40,
                 'rows' => 15,
-                'eval' => 'trim',
+                'eval' => 'trim'
             ],
         ],
         'location' => [
@@ -88,40 +69,33 @@ return [
                 'eval' => 'trim'
             ],
         ],
-        'salary' => [
+        'department' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.salary',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.department',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ],
         ],
-        'job_type' => [
+        'salary_range' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.job_type',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.salary_range',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ],
         ],
-        'workday_id' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.workday_id',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ],
-        ],
-        'application_link' => [
+        'application_deadline' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.application_link',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.application_deadline',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
+                'renderType' => 'inputDateTime',
+                'size' => 10,
+                'eval' => 'datetime',
+                'default' => 0
             ],
         ],
     ],

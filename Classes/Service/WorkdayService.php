@@ -30,6 +30,31 @@ class WorkdayService
         $this->cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('workday_apicache');
     }
 
+    public function syncJobs(array $workdayJobs)
+    {
+        foreach ($workdayJobs as $workdayJob) {
+            $existingJob = $this->jobRepository->findByWorkdayId($workdayJob['id']);
+
+            if ($existingJob) {
+                // Update existing job
+                $existingJob->setTitle($workdayJob['title']);
+                $existingJob->setDescription($workdayJob['description']);
+                // ... update other fields ...
+                $this->jobRepository->update($existingJob);
+            } else {
+                // Create new job
+                $newJob = new Job();
+                $newJob->setWorkdayId($workdayJob['id']);
+                $newJob->setTitle($workdayJob['title']);
+                $newJob->setDescription($workdayJob['description']);
+                // ... set other fields ...
+                $this->jobRepository->add($newJob);
+            }
+        }
+
+        $this->persistenceManager->persistAll();
+    }
+
     /**
      * Get all jobs from Workday API
      *

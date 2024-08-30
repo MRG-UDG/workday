@@ -5,11 +5,10 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 
 class JobRepository extends Repository
 {
-    public function findByWorkdayId(string $workdayId)
+    public function findByWorkdayId($workdayId)
     {
         $query = $this->createQuery();
-        return $query->matching(
-            $query->equals('workdayId', $workdayId)
-        )->execute()->getFirst();
+        $query->matching($query->equals('workday_id', $workdayId));
+        return $query->execute()->getFirst();
     }
 }
