@@ -5,7 +5,7 @@
         <body>
         <!-- General labels -->
             <trans-unit id="tx_workday_domain_model_job">
-                <source>Item</source>
+                <source>Job</source>
             </trans-unit>
             <trans-unit id="tx_workday_domain_model_job.title">
                 <source>Title</source>
@@ -22,7 +22,30 @@
             <trans-unit id="tx_workday_domain_model_job.all_day">
                 <source>All Day</source>
             </trans-unit>
-        <!-- Add more trans-units as necessary for your fields -->
+            <trans-unit id="tx_workday_domain_model_job.category">
+                <source>Category</source>
+            </trans-unit>
+            <trans-unit id="tx_workday_domain_model_job.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="tx_workday_domain_model_job.location">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="tx_workday_domain_model_job.type">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="tx_workday_domain_model_job.salary">
+                <source>Salary</source>
+            </trans-unit>
+            <trans-unit id="tx_workday_domain_model_job.company">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="tx_workday_domain_model_job.workday_id">
+                <source>Workday ID</source>
+            </trans-unit>
+            <trans-unit id="tx_workday_domain_model_job.application_link">
+                <source>Application Link</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
