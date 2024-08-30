@@ -10,7 +10,7 @@ defined('TYPO3') or die();
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
         'tx_mrgworkday_domain_model_job',
-        'EXT:mrg_workday/Resources/Private/Language/locallang_csh_tx_mrgworkday_domain_model_job.xlf'
+        'EXT:workday/Resources/Private/Language/locallang_csh_tx_mrgworkday_domain_model_job.xlf'
     );
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_mrgworkday_domain_model_job');
 })();

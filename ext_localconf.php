@@ -16,9 +16,9 @@ defined('TYPO3') or die();
 
     // Register ImportJobsTask
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\MRG\Workday\Task\ImportJobsTask::class] = [
-        'extension' => 'mrg_workday',
-        'title' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang.xlf:importJobsTask.name',
-        'description' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang.xlf:importJobsTask.description',
+        'extension' => 'workday',
+        'title' => 'LLL:EXT:workday/Resources/Private/Language/locallang.xlf:importJobsTask.name',
+        'description' => 'LLL:EXT:workday/Resources/Private/Language/locallang.xlf:importJobsTask.description',
         'additionalFields' => ''
     ];
 })();

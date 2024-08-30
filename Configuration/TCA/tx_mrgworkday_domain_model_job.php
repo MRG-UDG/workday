@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job',
+        'title' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -15,7 +15,7 @@ return [
             'disabled' => 'hidden',
         ],
         'searchFields' => 'title,description,location,salary,job_type',
-        'iconfile' => 'EXT:mrg_workday/Resources/Public/Icons/tx_mrgworkday_domain_model_job.gif'
+        'iconfile' => 'EXT:workday/Resources/Public/Icons/tx_mrgworkday_domain_model_job.gif'
     ],
     'types' => [
         '1' => ['showitem' => 'title, description, location, salary, job_type, workday_id, application_link, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, sys_language_uid, l10n_parent, l10n_diffsource'],
@@ -60,7 +60,7 @@ return [
         ],
         'title' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.title',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -69,7 +69,7 @@ return [
         ],
         'description' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.description',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -79,7 +79,7 @@ return [
         ],
         'location' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.location',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.location',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -88,7 +88,7 @@ return [
         ],
         'salary' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.salary',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.salary',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -97,7 +97,7 @@ return [
         ],
         'job_type' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.job_type',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.job_type',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -106,7 +106,7 @@ return [
         ],
         'workday_id' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.workday_id',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.workday_id',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -115,7 +115,7 @@ return [
         ],
         'application_link' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:mrg_workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.application_link',
+            'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_mrgworkday_domain_model_job.application_link',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
