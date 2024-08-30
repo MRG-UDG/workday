@@ -3,7 +3,7 @@ defined('TYPO3') or die();
 
 (static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'MrgWorkday',
+        'MRG.Workday',
         'JobListing',
         [
             \MRG\Workday\Controller\JobController::class => 'list, show'

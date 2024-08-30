@@ -3,28 +3,28 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2023-08-30T12:00:00Z" product-name="workday">
         <header/>
         <body>
-            <trans-unit id="tx_mrgworkday_domain_model_job">
+            <trans-unit id="tx_workday_domain_model_job">
                 <source>Job</source>
             </trans-unit>
-            <trans-unit id="tx_mrgworkday_domain_model_job.title">
+            <trans-unit id="tx_workday_domain_model_job.title">
                 <source>Title</source>
             </trans-unit>
-            <trans-unit id="tx_mrgworkday_domain_model_job.description">
+            <trans-unit id="tx_workday_domain_model_job.description">
                 <source>Description</source>
             </trans-unit>
-            <trans-unit id="tx_mrgworkday_domain_model_job.location">
+            <trans-unit id="tx_workday_domain_model_job.location">
                 <source>Location</source>
             </trans-unit>
-            <trans-unit id="tx_mrgworkday_domain_model_job.salary">
+            <trans-unit id="tx_workday_domain_model_job.salary">
                 <source>Salary</source>
             </trans-unit>
-            <trans-unit id="tx_mrgworkday_domain_model_job.job_type">
+            <trans-unit id="tx_workday_domain_model_job.job_type">
                 <source>Job Type</source>
             </trans-unit>
-            <trans-unit id="tx_mrgworkday_domain_model_job.workday_id">
+            <trans-unit id="tx_workday_domain_model_job.workday_id">
                 <source>Workday ID</source>
             </trans-unit>
-            <trans-unit id="tx_mrgworkday_domain_model_job.application_link">
+            <trans-unit id="tx_workday_domain_model_job.application_link">
                 <source>Application Link</source>
             </trans-unit>
             <trans-unit id="importJobsTask.name">
