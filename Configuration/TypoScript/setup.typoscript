@@ -1,22 +1,22 @@
-plugin.tx_mrgworkday_joblisting {
+plugin.tx_workday_joblisting {
     view {
         templateRootPaths.0 = EXT:workday/Resources/Private/Templates/
-        templateRootPaths.1 = {$plugin.tx_mrgworkday_joblisting.view.templateRootPath}
+        templateRootPaths.1 = {$plugin.tx_workday_joblisting.view.templateRootPath}
         partialRootPaths.0 = EXT:workday/Resources/Private/Partials/
-        partialRootPaths.1 = {$plugin.tx_mrgworkday_joblisting.view.partialRootPath}
+        partialRootPaths.1 = {$plugin.tx_workday_joblisting.view.partialRootPath}
         layoutRootPaths.0 = EXT:workday/Resources/Private/Layouts/
-        layoutRootPaths.1 = {$plugin.tx_mrgworkday_joblisting.view.layoutRootPath}
+        layoutRootPaths.1 = {$plugin.tx_workday_joblisting.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_mrgworkday_joblisting.persistence.storagePid}
+        storagePid = {$plugin.tx_workday_joblisting.persistence.storagePid}
     }
 }
 
 page {
     includeCSS {
-        mrgworkday = EXT:workday/Resources/Public/CSS/styles.css
+        workday = EXT:workday/Resources/Public/CSS/styles.css
     }
     includeJSFooter {
-        mrgworkday = EXT:workday/Resources/Public/JavaScript/main.js
+        workday = EXT:workday/Resources/Public/JavaScript/main.js
     }
 }
