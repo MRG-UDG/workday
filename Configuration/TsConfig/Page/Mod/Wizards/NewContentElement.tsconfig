@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems {
+    plugins {
+        elements {
+            workday_joblist {
+                iconIdentifier = workday-joblist
+                title = LLL:EXT:workday/Resources/Private/Language/locallang.xlf:content_element.joblist.title
+                description = LLL:EXT:workday/Resources/Private/Language/locallang.xlf:content_element.joblist.description
+                tt_content_defValues {
+                    CType = list
+                    list_type = workday_joblist
+                }
+            }
+        }
+        show := addToList(workday_joblist)
+    }
+}

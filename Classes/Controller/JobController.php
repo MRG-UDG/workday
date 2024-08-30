@@ -1,38 +1,97 @@
 <?php
 namespace MRG\Workday\Controller;
 
-use MRG\Workday\Domain\Repository\JobRepository;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use MRG\Workday\Service\WorkdayService;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class JobController extends ActionController
 {
-    protected JobRepository $jobRepository;
+    /**
+     * @var WorkdayService
+     */
+    protected $workdayService;
 
-    public function __construct(JobRepository $jobRepository)
+    /**
+     * Inject the Workday service
+     *
+     * @param WorkdayService $workdayService
+     */
+    public function injectWorkdayService(WorkdayService $workdayService)
     {
-        $this->jobRepository = $jobRepository;
+        $this->workdayService = $workdayService;
     }
 
+    /**
+     * List action
+     *
+     * @return ResponseInterface
+     */
     public function listAction(): ResponseInterface
     {
-        $jobs = $this->jobRepository->findAll();
-        $this->view->assign('jobs', $jobs);
+        try {
+            $jobs = $this->workdayService->getJobs();
+
+            // Process data with hook
+            $this->processApiDataWithHook($jobs);
+
+            $this->view->assign('jobs', $jobs);
+        } catch (\Exception $e) {
+            $this->addFlashMessage(
+                'Error fetching jobs: ' . $e->getMessage(),
+                'Error',
+                \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR
+            );
+        }
+
         return $this->htmlResponse();
     }
 
-    public function showAction(int $job = null): ResponseInterface
+    /**
+     * Show action
+     *
+     * @param string $jobId
+     * @return ResponseInterface
+     */
+    public function showAction(string $jobId): ResponseInterface
     {
-        if ($job === null) {
-            return $this->redirect('list');
+        try {
+            $job = $this->workdayService->getJobDetails($jobId);
+
+            // Process data with hook
+            $this->processApiDataWithHook([$job]);
+
+            $this->view->assign('job', $job);
+        } catch (\Exception $e) {
+            $this->addFlashMessage(
+                'Error fetching job details: ' . $e->getMessage(),
+                'Error',
+                \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR
+            );
         }
 
-        $job = $this->jobRepository->findByUid($job);
-        if ($job === null) {
-            return $this->redirect('list');
-        }
-
-        $this->view->assign('job', $job);
         return $this->htmlResponse();
+    }
+
+    /**
+     * Process API data with registered hooks
+     *
+     * @param array $apiData
+     */
+    protected function processApiDataWithHook(array &$apiData): void
+    {
+        if (isset($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/workday']['processApiData'])
+            && is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/workday']['processApiData'])
+        ) {
+            foreach ($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/workday']['processApiData'] as $className) {
+                $hookObject = GeneralUtility::makeInstance($className);
+                if (method_exists($hookObject, 'process')) {
+                    $params = ['apiData' => $apiData];
+                    $hookObject->process($params, $this);
+                    $apiData = $params['apiData'];
+                }
+            }
+        }
     }
 }
