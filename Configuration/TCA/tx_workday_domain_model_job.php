@@ -72,10 +72,12 @@ return [
             'label' => 'LLL:EXT:workday/Resources/Private/Language/locallang_db.xlf:tx_workday_domain_model_job.description',
             'config' => [
                 'type' => 'text',
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default',
                 'cols' => 40,
                 'rows' => 15,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'location' => [
             'exclude' => false,
