@@ -1,4 +1,4 @@
-CREATE TABLE tx_mrgworkday_domain_model_job (
+CREATE TABLE tx_workday_domain_model_job (
     title varchar(255) DEFAULT '' NOT NULL,
     description text,
     location varchar(255) DEFAULT '' NOT NULL,
