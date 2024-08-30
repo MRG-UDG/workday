@@ -1,0 +1,30 @@
+{
+  "name": "mrg/workday",
+  "description": "A TYPO3 extension to integrate workday functionalities.",
+  "type": "typo3-cms-extension",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Marko Röper-Grewe",
+      "email": "marko.roeper-grewe@udg.de",
+      "homepage": "https://www.udg.de/de/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^11.5 || ^12.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MRG\\Workday\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "workday"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": "TYPO3\\Composer\\Plugin\\Core\\InstallerScripts::postAutoloadDump"
+  }
+}
