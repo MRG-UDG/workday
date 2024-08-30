@@ -31,8 +31,8 @@
             <trans-unit id="tx_workday_domain_model_job.location">
                 <source>Location</source>
             </trans-unit>
-            <trans-unit id="tx_workday_domain_model_job.type">
-                <source>Type</source>
+            <trans-unit id="tx_workday_domain_model_job.job_type">
+                <source>Job type</source>
             </trans-unit>
             <trans-unit id="tx_workday_domain_model_job.salary">
                 <source>Salary</source>
